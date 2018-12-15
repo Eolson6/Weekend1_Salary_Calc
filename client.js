@@ -52,7 +52,7 @@ function calcMonthlySalary() {
             totalSalary += parseInt(monthlyExpenseData[i]);
           console.log('total monthly salary:',totalSalary);
           
-          if (totalSalary <= 15000) {
+          if (totalSalary <= 20000) {
               $('#monthly-expenses-output').css('color', 'black');
           } else {
               $('#monthly-expenses-output').css('color', 'red');
