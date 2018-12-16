@@ -9,99 +9,81 @@ class Employee {
     this.AnnualSalary = annualSalary;
     } //end constructor
 } // end employee Class
+let employeeData = []; // store new employee data
 
-//creat array to store salary data
-let monthlyExpenseData = [];
-
-//init jquery
-$(document).ready(function(){
-
-    $( '#submitButton' ).on( 'click', updateEmployeeList, ); 
-    $('#submitButton').on('click', calcMonthlySalary); 
-    $("p").click(function(){
-        $(this).remove();
-    });
+$(document).ready(function () { //init jquery
+    $( '#submitButton' ).on( 'click', updateEmployeeList, ); //on click, run " "
+    $('#submitButton').on('click', calcMonthlySalary);  // on click, run " "
+    $('#deleteButton').on('click', deleteLastEmployee); //on click, run ""
 
 $('.input-forms').css('float');
 
 }); // end ready now function
-    
+
 function updateEmployeeList (){
-    //clear out data
-    $('#EmployeeList').empty();
+   
+    $('#EmployeeList').empty();  //clear out data
     
-    //create variables for later use
+    //create variables from input fields
     let firstNameIn = $('#firstNameIn').val();
     let lastNameIn = $('#lastNameIn').val();
     let idNumberIn = $('#idNumberIn').val();
     let jobTitleIn = $('#jobTitleIn').val();
     let annualSalaryIn = ($('#annualSalaryIn').val());
-    let monthlySal = parseInt(annualSalaryIn)/12
-    let monthlySalary = monthlySal.toFixed(2);
+    //monthlySalary = annualSalaryIn.toFixed(2); //take 2 decimals from input field
     
 
     //test to make sure variables and functions work
     console.log('employee annualSalaryIn:', annualSalaryIn);
-    console.log('employee monthly salary:', monthlySalary);
-    
-    //create new variable for employee information string
-    let addEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, jobTitleIn, annualSalaryIn, parseInt(monthlySalary));
-    monthlyExpenseData.push( addEmployee );
 
+    
+    //create new employee object from class constructor 
+    let addEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, jobTitleIn, annualSalaryIn);
+    employeeData.push( addEmployee ); // push new Employee into employee data array
+
+    //create variable for output/appending to HTML
    let newEmployee =( firstNameIn + ' ' + lastNameIn + ' ' + idNumberIn 
     + ' ' + jobTitleIn + ' ' + '$'+annualSalaryIn );
    
     //test: console.log( 'showing', newEmployee);
 
-    //append employeelist to html 
+    //append new employee info to html 
     $('#employeeList').append('<p>' + newEmployee + '</p>');
 
-    //push employee monthly data to monthly expense array
-   // monthlyExpenseData.push( monthlySalary);
    $('#firstNameIn').empty('First Name');
     $('#lastNameIn').empty();
     $('#idNumberIn').val();
     $('#jobTitleIn').val();
     $('#annualSalaryIn').val();
-    
-    //verify pushing correct value console.log('individual monthly salary:', parseInt([monthlyExpenseData]));
-    //parseInt([monthlyExpenseData]);
 
 } //end updateEmployeeList
    
 function calcMonthlySalary() {
 
     let totalSalary = 0;
-        for (employee of monthlyExpenseData) {
+        for (employee of employeeData) { //run for of to gather individual salary data
             console.log( employee);
-            
-            
-        //     //turn string into a number
-            totalSalary += employee.AnnualSalary/12;
-        //     //verify for loop is working as expected
+            totalSalary += employee.AnnualSalary/12; //gather total monthly salary data
+             //verify for loop is working as expected
            console.log('total monthly salary:',totalSalary.toFixed(2));
-          //if totalSalary is less than 20000, text black
-          if (totalSalary <= 20000) {
+            if (totalSalary <= 20000) { //if monthly salary expense is less than 20000, text black
               $('#monthly-expenses-output').css('color', 'black');
-            // else, totalSalary is more than 20000, text red
+            // else, monthly salary expense is more than 20000, show text red
           } else {
               $('#monthly-expenses-output').css('color', 'red');
           }
         
-        //    let monthlyExpense = totalSalary + monthlyExpenseData[i];
-        //    console.log('total monthly expenses:', monthlyExpense);
-           
-            // let monthlyExpense = totalSalary + monthlyExpense;
-            // console.log(monthlyExpense);
-
-        // }
-        
-        //append salary to Dom
-            $('#monthly-expenses-output').empty();
+            $('#monthly-expenses-output').empty(); //clear out prior data
+            //append salary to Dom
     $('#monthly-expenses-output').append('<h4>' + 'Monthly Salary Expenses:'+ ' ' +'$'+(totalSalary).toFixed(2) + '</h4>');
     }
 }
 
+function deleteLastEmployee(){
+    console.log('in delete');
+    $("p:last-child").remove();
+    
+}
 
 
     
