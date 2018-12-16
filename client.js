@@ -22,7 +22,7 @@ $('.input-forms').css('float');
 
 function updateEmployeeList (){
    
-    $('#EmployeeList').empty();  //clear out data
+    $('#EmployeeList').val();  //clear out data
     
     //create variables from input fields
     let firstNameIn = $('#firstNameIn').val();
@@ -50,11 +50,11 @@ function updateEmployeeList (){
     //append new employee info to html 
     $('#employeeList').append('<p>' + newEmployee + '</p>');
 
-   $('#firstNameIn').empty('First Name');
-    $('#lastNameIn').empty();
-    $('#idNumberIn').val();
-    $('#jobTitleIn').val();
-    $('#annualSalaryIn').val();
+   $('#firstNameIn').val( '');
+    $('#lastNameIn').val('');
+    $('#idNumberIn').val('');
+    $('#jobTitleIn').val('');
+    $('#annualSalaryIn').val('');
 
 } //end updateEmployeeList
    
@@ -81,7 +81,7 @@ function calcMonthlySalary() {
 
 function deleteLastEmployee(){
     console.log('in delete');
-    $("p:last-child").remove();
+    $("p:last-child").remove(); //
     
 }
 
