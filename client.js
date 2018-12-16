@@ -35,8 +35,8 @@ function updateEmployeeList (){
     let lastNameIn = $('#lastNameIn').val();
     let idNumberIn = $('#idNumberIn').val();
     let jobTitleIn = $('#jobTitleIn').val();
-    let annualSalaryIn = parseInt($('#annualSalaryIn').val());
-    let monthlySal = annualSalaryIn /12; 
+    let annualSalaryIn = ($('#annualSalaryIn').val());
+    let monthlySal = parseInt(annualSalaryIn)/12
     let monthlySalary = monthlySal.toFixed(2);
     
 
@@ -49,7 +49,7 @@ function updateEmployeeList (){
     monthlyExpenseData.push( addEmployee );
 
    let newEmployee =( firstNameIn + ' ' + lastNameIn + ' ' + idNumberIn 
-    + ' ' + jobTitleIn + ' ' + '$'+parseInt(annualSalaryIn ));
+    + ' ' + jobTitleIn + ' ' + '$'+annualSalaryIn );
    
     //test: console.log( 'showing', newEmployee);
 
@@ -70,19 +70,16 @@ function updateEmployeeList (){
 } //end updateEmployeeList
    
 function calcMonthlySalary() {
-    //clear out prior data
-    
-    //create for loop to go through array to add monthly salaries to 
-    //total out total monthly salaries
+
     let totalSalary = 0;
         for (employee of monthlyExpenseData) {
             console.log( employee);
             
             
         //     //turn string into a number
-            totalSalary += parseInt((employee.AnnualSalary/12));
+            totalSalary += employee.AnnualSalary/12;
         //     //verify for loop is working as expected
-           console.log('total monthly salary:',totalSalary);
+           console.log('total monthly salary:',totalSalary.toFixed(2));
           //if totalSalary is less than 20000, text black
           if (totalSalary <= 20000) {
               $('#monthly-expenses-output').css('color', 'black');
@@ -101,7 +98,7 @@ function calcMonthlySalary() {
         
         //append salary to Dom
             $('#monthly-expenses-output').empty();
-    $('#monthly-expenses-output').append('<h4>' + 'Monthly Salary Expenses:' +Number(totalSalary).toFixed(2) + '</h4>');
+    $('#monthly-expenses-output').append('<h4>' + 'Monthly Salary Expenses:'+ ' ' +'$'+(totalSalary).toFixed(2) + '</h4>');
     }
 }
 
