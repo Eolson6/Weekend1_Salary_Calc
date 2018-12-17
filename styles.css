@@ -90,5 +90,6 @@ table, th, td {
     table-layout: fixed;
     width: 60%;
     text-align: center; 
+    border-bottom: 1px solid black;
 }
 
