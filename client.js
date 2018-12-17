@@ -84,20 +84,29 @@ function calcMonthlySalary() {
 
 function deleteLastEmployee(){
     console.log('in delete');
-    $("p:last-child").remove(); //
+    $("p:last-child").remove(); // removes most resent employee text string
     
 }
 
 
 function findandRemove () {
-employeeData.pop();
-calcMonthlySalary();
+employeeData.pop(); //removes most recent added employee to array
+    if ( employeeData.length <=0 ) {
+       employeeData = [];
+       totalSalary=0
+       calcMonthlySalary(totalSalary);
+        $('#monthly-expenses-output').html('<h4>' + 'Monthly Salary Expenses:' 
+        + ' ' + '$' + (totalSalary).toFixed(2) + '</h4>');
+        // alert("*Warning* Refresh Screen to start over and continue");
+    } else {
+    
+calcMonthlySalary(); //run calcmonthlysalary to update data
     }
 
 
 
 
-
+}
 
    
 
@@ -107,4 +116,3 @@ calcMonthlySalary();
 
     
   
-
