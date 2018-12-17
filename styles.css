@@ -1,34 +1,47 @@
 
 
 html, body {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     font-family: 'Exo 2', sans-serif;
 font-family: 'Permanent Marker', cursive;
+font-family: 'Pontano Sans', sans-serif;
 }
 
 .headings{
     /* max-width: 800px; */
-    margin: 0 atuo;
+    margin: auto;
     text-align: center;
 }
-)
 
-.penguins {
-    width: auto;
-    height: 50px;
-    padding: 100px;
+.penguins{
+    
+   margin: auto;
 }
 
+
 #container{
-    max-width: auto;
+    max-width: 100px;
     max-height: auto;
 }
 
+.input-Forms {
+    display: inline;
+}
+
+#monthly-expenses-output {
+    text-align: right;
+    padding-inline-end: 40px;
+}
+
+
+
+
 /* #employee-info {
+
     border-collapse: collapse;
     width: auto;
-    border: 5 px solid;
+    border:5px solid;
     border-color: white;
     padding: 8px;
 }
@@ -36,23 +49,69 @@ font-family: 'Permanent Marker', cursive;
 #employee-info th {
     padding-top: 5x;
     padding-bottom: 5 px;
+    border: 2px solid blue;
     text-align: center;
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color:black; */
+}
+/* 
+#employee-info table td{
+    border:1px solid;
+  border-bottom: 1px solid;
+  border-color: blue;
+  text-align: center;
 }
 
-#employee-info td{
-    text-align: center;
-} */
+#employee-info, #table, td, th, tr {  
+  border:1px solid;
+  border-bottom: 1px solid;
+  border-color: blue;
+  text-align: center;
+}
 
-#table , th, td{
+#employee-info, #table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}  */
+
+/* #table,tr, td{
     width: auto;
     height: auto;
-    border-collapse: collapse;
-    border: 5 px solid;
-    border-color: white;
-    padding: 3px;
+    border-collapse: collapse; 
+    border:3px solid;
+    border-color: blue;
     text-align: center;
-    background-color: blue;
-    color: white;   
+    background-color:white;
+    color:blue;   
+}
+
+
+#tr, td{
+    width: auto;
+    height: auto;
+    border-collapse: collapse; 
+    border:3px solid;
+    border-color: blue;
+    text-align: center;
+    background-color:white;
+    color:blue;   
+} */
+
+table {
+    border-collapse: collapse;
+    width: auto;
+}
+table, th, td {
+    border: 1px solid black;
+    height: auto;
+    text-align: center;
+}
+
+th, td {
+border-bottom: 1px solid black;
+border-collapse: collapse;
 }

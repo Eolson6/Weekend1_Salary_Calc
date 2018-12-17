@@ -13,9 +13,9 @@ let employeeData = []; // store new employee data
 
 $(document).ready(function () { //init jquery
     $( '#submitButton' ).on( 'click', updateEmployeeList ); //on click, run " "
-    $('#submitButton').on('click', calcMonthlySalary);  // on click, run " "
-        
+    $('#submitButton').on('click', calcMonthlySalary);  // on click, run " 
     $('#deleteButton').on('click', deleteLastEmployee); //on click, run ""
+    $('#deleteButton').on('click', findandRemove);
 
 }); // end ready now function
 
@@ -89,7 +89,10 @@ function deleteLastEmployee(){
 }
 
 
-
+function findandRemove () {
+employeeData.pop();
+calcMonthlySalary();
+    }
 
 
 
