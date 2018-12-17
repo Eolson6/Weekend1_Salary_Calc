@@ -47,7 +47,7 @@ function updateEmployeeList (){
     $('#name-output').append('<p>' + firstNameIn + ' ' + lastNameIn + '</p>');
     $('#idNumber-output').append('<p>' + idNumberIn + '</p>');
     $('#job-title-output').append('<p>' + jobTitleIn + '</p>');
-    $('#annual-salary-output').append('<p>' + annualSalaryIn + '</p>');
+    $('#annual-salary-output').append('<p>' + '$' + annualSalaryIn + '</p>');
 
 
 

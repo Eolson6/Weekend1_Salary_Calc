@@ -1,32 +1,58 @@
 
-
-html, body {
-    /* margin: 0;
-    padding: 0; */
+ html, body {
+    margin: 0;
+    padding: 0; 
     font-family: 'Exo 2', sans-serif;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Pontano Sans', sans-serif;
+margin-left: auto;
+margin-right: auto;
+
+ }
+
+#heading {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+    text-align: right;
+    margin-right: 25px;
+    float: right;
+    position: relative;
 }
 
-.headings{
-    /* max-width: 800px; */
-    margin: auto;
-    text-align: center;
-}
 
-.penguins{
+
+.v1 {
+    border-left: 60px solid blue;
+    height: 800px;
+    float: left;
+    margin-left: 75px;
+    position: fixed;
     
-   margin: auto;
 }
 
+.v2 {
+    border-left: 60px solid blue;
+    height: 800px;
+    float: top;
+    margin-left: 0px;
+    position: fixed;
+} 
 
-#container{
-    max-width: 100px;
-    max-height: auto;
+
+.horizontal-line {
+    height: 70px;
+    background-color: black;
+    float: none;
+    z-index: 100;
+    position: relative;
 }
 
-.input-Forms {
-    display: inline;
+.top-horizontal-line {
+    height: 30px;
+    background-color: rgb(68, 197, 126);
+    float: none;
+    z-index: 100;
+    position: relative;
 }
 
 #monthly-expenses-output {
@@ -34,84 +60,31 @@ font-family: 'Pontano Sans', sans-serif;
     padding-inline-end: 40px;
 }
 
-
-
-
-/* #employee-info {
-
-    border-collapse: collapse;
-    width: auto;
-    border:5px solid;
-    border-color: white;
-    padding: 8px;
-}
-
-#employee-info th {
-    padding-top: 5x;
-    padding-bottom: 5 px;
-    border: 2px solid blue;
+.headings {
     text-align: center;
-    background-color: white;
-    color:black; */
-}
-/* 
-#employee-info table td{
-    border:1px solid;
-  border-bottom: 1px solid;
-  border-color: blue;
-  text-align: center;
 }
 
-#employee-info, #table, td, th, tr {  
-  border:1px solid;
-  border-bottom: 1px solid;
-  border-color: blue;
-  text-align: center;
+.input-Forms {
+display: inline-block;
+margin-left: 215px;
+
+} 
+
+.chart {
+    display:inline-block;
+
 }
 
-#employee-info, #table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 15px;
-}  */
-
-/* #table,tr, td{
-    width: auto;
-    height: auto;
-    border-collapse: collapse; 
-    border:3px solid;
-    border-color: blue;
-    text-align: center;
-    background-color:white;
-    color:blue;   
-}
-
-
-#tr, td{
-    width: auto;
-    height: auto;
-    border-collapse: collapse; 
-    border:3px solid;
-    border-color: blue;
-    text-align: center;
-    background-color:white;
-    color:blue;   
-} */
-
-table {
-    border-collapse: collapse;
-    width: auto;
-}
 table, th, td {
     border: 1px solid black;
-    height: auto;
-    text-align: center;
+    border-width: auto;
+    border-collapse: collapse;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-block-end-width: 2px;
+    table-layout: fixed;
+    width: 60%;
+    /* text-align: center; 
 }
 
-th, td {
-border-bottom: 1px solid black;
-border-collapse: collapse;
-}
